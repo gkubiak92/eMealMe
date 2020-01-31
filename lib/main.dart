@@ -1,3 +1,5 @@
+import 'package:eMealMe/screens/settings_screen.dart';
+import 'package:eMealMe/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
 
 import './screens/categories_screen.dart';
@@ -30,9 +32,11 @@ class MyApp extends StatelessWidget {
       ),
       //home: CategoriesScreen(),
       routes: {
-        '/': (ctx) => CategoriesScreen(),
+        '/': (ctx) => TabScreen(),
+        CategoriesScreen.routeName: (ctx) => CategoriesScreen(),
         CategoryMealScreen.routeName: (ctx) => CategoryMealScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        SettingsScreen.routeName: (ctx) => SettingsScreen(),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
